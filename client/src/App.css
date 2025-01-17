@@ -1,0 +1,658 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Patrick+Hand&display=swap');
+
+body{
+  font-family: "Patrick Hand", cursive !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-size: large !important;
+}
+
+.conti{
+  padding: 20px;
+}
+
+.login-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+  margin-top: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-form {
+  margin-top: 20px;
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form button {
+  width: 100%;
+  height: 40px;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #3e8e41;
+}
+
+
+
+
+
+.colored-toast.swal2-icon-success {
+	background-color: #a5dc86 !important;
+  }
+  
+  .colored-toast.swal2-icon-error {
+	background-color: #f27474 !important;
+  }
+  
+  .colored-toast.swal2-icon-warning {
+	background-color: #f8bb86 !important;
+  }
+  
+  .colored-toast.swal2-icon-info {
+	background-color: #3fc3ee !important;
+  }
+  
+  .colored-toast.swal2-icon-question {
+	background-color: #87adbd !important;
+  }
+  
+  .colored-toast .swal2-title {
+	color: white;
+  }
+  
+  .colored-toast .swal2-close {
+	color: white;
+  }
+  
+  .colored-toast .swal2-html-container {
+	color: white;
+  }
+
+
+
+  .profilePicMsg{
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    margin-right: 10px !important;
+  }
+  .friend-image {
+    position: relative;
+    display: inline-block;
+}
+
+.online-status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+    border: 2px solid white;
+    
+}
+
+.friendListing img{
+  width: 50px !important;
+  border-radius: 50%;
+}
+.friendListing button{
+  width: 100%;
+  padding: 5%;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 10px;
+  background-color: #d5cfd8; /* change this */
+  transition: all ease .3s;  
+  transform: scale(1.02);
+  &:hover{
+    transform: scale(1.03);
+    transition: all ease .3s;
+  }
+}
+
+.friendsBackGroud{
+  background-color:#f9f9f9;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-height: 660px;
+  height: 660px;
+}
+
+.chatting{
+  width: 100%;
+  border: 1px solid rgb(0, 0, 0, 0.3);
+  border-radius: 0 10px 10px 0;
+  height: 100%;
+}
+
+.friendInfoListing{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;  
+}
+.friendInfoListing p {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  width: 50%;
+  padding: 0 !important;
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+.section-1-Friends{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(0, 0, 0, 0.3);
+  border-radius: 10px 0 0 10px;
+  height: 100%;
+  overflow-y: scroll;  
+}
+
+.cancelBtn{
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.friendInfoListing p {
+  font-size: larger;
+  font-weight: 500;
+  overflow: hidden;
+  
+}
+.noFriends{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.noFriends button{
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding: 1%;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #52ee5a;
+}
+
+.noFriends button a{
+  all: unset;
+}
+
+.messageList{
+  max-height: 500px;
+  overflow-y: scroll;  
+  padding: 1%;
+  background-color: #fff8f8;
+  height: 500px;
+  border-radius: 20px;
+}
+
+
+.message {
+  position: relative;
+  padding: 1%;
+  border-radius: 10px;
+}
+
+.deleteMsgBtn {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  
+}
+
+.message:hover .deleteMsgBtn {
+  display: block;
+  
+}
+.message:hover{
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.innermsg{
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+.innermsg p {
+  font-size: larger;
+  color: black !important;
+  border-radius: 10px;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+}
+.innermsg img{
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.deleteMsgBtn{
+  border: none;
+  border-radius: 5px;
+  background-color: #f27474;
+  color: white;
+}
+
+.emojiSet {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  gap: 5px;
+  max-width: 200px;
+  max-height: 200px;
+  overflow: auto;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 5px; 
+}
+
+
+.emojiSet button {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  font-size: 1.5em;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+
+.emojiSet button:hover {
+  background-color: #f0f0f0;
+}
+
+.messageSend{
+  width: 50%;
+}
+
+.file-upload-button {
+  position: relative;
+  display: inline-block;
+}
+
+
+.upload-button {
+  display: flex;
+  align-items: center; 
+  padding: 10px 20px; 
+  background-color: #007bff; 
+  color: white;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+.post-image-preview{
+  width: 200px;
+}
+
+.inputs{
+  display: flex;
+  justify-content: flex-start;
+  gap: 3px;
+  padding: 1%;  
+}
+
+.inputs .inputbtn{
+  border-radius: 10px;
+  border: none;
+  width: 50px;
+  height: 50px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(0, 187, 255);
+}
+
+.inputs input {
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 0, 0, 0.4);
+  padding: 1%;  
+  &:focus{
+    border-color: rgb(0, 187, 255, 0.4);
+    outline: none;
+    
+  }
+}
+
+.OnlineFriends img{
+  width: 80px;
+  border-radius: 50%;
+}
+.OnlineFriends{
+  display: flex;
+  align-items: center;
+  width: 30%;
+  background-color: #a5dc86;
+  padding: 1%;
+  border-radius: 10px;
+  
+  justify-content: space-around;
+}
+
+
+.friendAdd{
+  overflow-y: scroll;
+  max-height: 200px;
+  height: 200px;
+  border-radius: 10px;  
+  border-radius: 10px;
+}
+
+.AllMemblist button{
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: white;
+  width: 20% !important;
+}
+
+
+.friendAddlist{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+.friendAddlist button{
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: white;
+  width: 30%;
+}
+.friendAddlist p {
+  margin-top: 15px;
+}
+
+.AddButton{
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: white;
+}
+
+
+.settings{
+  overflow-y: scroll;
+  max-height: 650px;
+  height: 600px;
+}
+
+.updateGroup{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  justify-content: center;  
+}
+
+.updateGroup input[type='text']{
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 0, 0, 0.4);
+  padding: 10px;
+  &:focus{
+    border-color: rgb(0, 187, 255, 0.4);
+    outline: none;    
+  }
+}
+
+.updateGroup button{
+  border: none;
+  height: 50px;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: white;
+
+}
+
+.Selected{
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;  
+  margin-top: 3px;
+}
+.server-item img{
+  width: 350px;  
+  border-radius: 10px;
+  height: auto;
+}
+
+.server-item{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  color: black;
+}
+
+.server-item button{
+  border: none;
+  background-color: #007bff;
+  color: white;
+  width: 50%;
+  border-radius: 5px;
+  height: 40px;
+}
+.server-list{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.server-list input{
+  width: 30%;
+  border-radius: 10px;
+  height: 50px;
+  border: 1px solid rgb(0, 0, 0, 0.4);
+  padding: 2%;
+  &:focus{
+    border-color: rgb(0, 187, 255, 0.4);
+    outline: none;    
+  }
+}
+
+
+.create-server-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-server-container h1 {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.create-server-container p {
+  font-size: 15px !important;
+  color: #666;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.create-server-container input[type="text"],
+.create-server-container input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.create-server-container input[type="file"] {
+  padding: 5px;
+}
+
+
+.create-server-container p[name-length],
+.create-server-container p[bio-length] {
+  margin-bottom: 10px;
+}
+
+.create-server-container button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.create-server-container button:hover {
+  background-color: #0056b3;
+}
+
+.create-server-container .cancelBtn {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.create-server-container .cancelBtn i {
+  pointer-events: none;
+}
+
+.create-server-container .post-image-preview {
+  margin-top: 10px;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.create-server-container .image-preview-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+
+.zoomable {
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.zoomable img {
+  transition: transform 1s ease;
+}
+
+.zoomable:hover img {
+  transform: scale(1.1);
+}
+
+
+.actionBtn{
+  background-color: rgb(173, 213, 255, 0.6);
+}
+
+.Leave{
+  background-color: rgba(250, 161, 161, 0.6);
+}
+
+.MemberListing{
+  display: flex;  
+  align-items: center;
+  gap: 10px;
+  background-color: #d5cfd8;
+  width: 30%;
+  padding: 1%;
+  border-radius: 20px;
+}
+.MemberListing p {
+  margin-top: 12px;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.joinBtn{
+  border: none;
+  background-color: #007bff;
+  color: white;
+  width: 30%;
+  border-radius: 5px;
+  height: 40px;
+}
