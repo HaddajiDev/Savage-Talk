@@ -14,20 +14,17 @@ const messages = require('../models/messages');
 router.post('/login', loginRules(), validation, async (request, result) => {
     const { email, password } = request.body;
     try {
-        // Await the result of findOne
         const searchedUser = await User.findOne({ email });
         if (!searchedUser) {
             return result.status(400).send({error: "User not found"});
         }
 
-        // Await the result of bcrypt.compare
         const match = await bcrypt.compare(password, searchedUser.password);
 
         if (!match) {
             return result.status(400).send({error: "Invalid credentials"});
         }       
 
-		//create token
 		const payload = {
 			_id: searchedUser._id
 		}
