@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom';
 import { verifyUser } from '../redux/UserSlice';
 
-function verify() {
+function UserVerify() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const location = useLocation();
@@ -25,4 +25,4 @@ function verify() {
   )
 }
 
-export default verify
+export default UserVerify
