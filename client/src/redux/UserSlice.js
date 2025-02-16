@@ -98,6 +98,15 @@ export const GetUser = createAsyncThunk('user/one', async ({ id }) => {
     }
 });
 
+export const verifyUser = createAsyncThunk("user/verify", async(token) => {
+	try {
+		const response = await axios.post(`${link}/user/verify?token=${token}`);
+		return response.data;
+	} catch (error) {
+		
+	}
+})
+
 
 const initialState = {
     user: null,
@@ -165,6 +174,11 @@ export const UserSlice = createSlice({
 	})
 	.addCase(GetAllUserServers.rejected, (state) => {
 		state.status = "failed";
+	})
+
+	.addCase(verifyUser.fulfilled, (state, action) => {
+		state.user = action.payload.user;
+		localStorage.setItem("token", action.payload.token);
 	})
 }
 })

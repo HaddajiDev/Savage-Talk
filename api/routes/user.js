@@ -267,6 +267,26 @@ router.get('/one', async(req, res) => {
     }
 });
 
+router.post('/verify', async(req, res) => {
+    const token = req.query.token;
+
+    try {
+        if(!token){
+            return res.status(400).send("error");
+        }
+
+        const decoded = jwt.verify(token, process.env.SCTY_KEY);
+        const user = await User.findOne({_id: decoded._id});
+        if(!user){
+            return res.status(400).send("invalid token");
+        }
+
+        res.status(200).send({token : `bearer ${token}`, user : user});
+    } catch (error) {
+        
+    }
+})
+
 
 
 module.exports = router;

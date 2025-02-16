@@ -16,6 +16,7 @@ import NavBarServerRoom from './components/NavBarServerRoom';
 import DashboardPrivateRoute from './components/DashboardPrivateRoute';
 import NavBarDasboard from './components/NavBarDasboard';
 import {io}  from 'socket.io-client';
+import { Verify } from 'crypto';
 
 const socket = io(process.env.REACT_APP_LINK);
 function App() { 
@@ -42,6 +43,7 @@ function App() {
       <Routes>
         <Route element={<PrivateRoute state="login"/>}>
         <Route path='/login' element={<Login />}/>
+        <Route path='/verify' element={<Verify />}/>
         </Route>
         <Route element={<PrivateRoute state="home"/>}>
           <Route path='/' element={<NavBarFriends />}/>          
