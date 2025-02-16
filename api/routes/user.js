@@ -276,7 +276,7 @@ router.post('/verify', async (req, res) => {
         }
 
         const decoded = jwt.verify(token, process.env.SCTY_KEY);
-        const user = await User.findById(decoded._id);
+        const user = await User.findOne({_id : decoded._id});
 
         if (!user) {
             return res.status(400).send({ error: "Invalid token" });

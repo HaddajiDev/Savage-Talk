@@ -103,7 +103,7 @@ export const verifyUser = createAsyncThunk("user/verify", async({ token }) => {
 		const response = await axios.post(`${link}/user/verify`, { token });
 		return response.data;
 	} catch (error) {
-		
+		console.log(error);
 	}
 })
 
