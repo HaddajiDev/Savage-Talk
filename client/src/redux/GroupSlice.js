@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const link = "http://localhost:2000"
+const link = process.env.REACT_APP_LINK
 
 export const createGroup = createAsyncThunk('group/CreateGroup', async ({ users, author }) => {
     try {

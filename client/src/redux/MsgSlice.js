@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 
-const link = "http://localhost:2000"
+const link = process.env.REACT_APP_LINK
 
 export const SendMasg = createAsyncThunk('msg/send', async ({ userId, body, room }) => {
     try {
