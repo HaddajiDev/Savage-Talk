@@ -17,7 +17,7 @@ import DashboardPrivateRoute from './components/DashboardPrivateRoute';
 import NavBarDasboard from './components/NavBarDasboard';
 import {io}  from 'socket.io-client';
 
-const socket = io("http://localhost:2000");
+const socket = io(process.env.REACT_APP_LINK);
 function App() { 
   const dispatch = useDispatch();
   const [ping, setPing] = useState(false);

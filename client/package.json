@@ -16,6 +16,7 @@
     "axios": "^1.7.3",
     "bootstrap": "^5.3.3",
     "cloudinary": "^2.4.0",
+    "dotenv": "^16.4.7",
     "jquery": "^3.7.1",
     "link-preview-js": "^3.0.5",
     "node": "^22.6.0",

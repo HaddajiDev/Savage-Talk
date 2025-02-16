@@ -10,7 +10,7 @@ import { Emojis } from '../EmojiSet';
 import { CreateComp } from './ModalComps';
 
 
-const socket = io("http://localhost:2000");
+const socket = io(process.env.REACT_APP_LINK);
 
 const MAX_LENGTH_NAME = 30;
 

@@ -9,7 +9,7 @@ import { LeaveGroup } from '../redux/UserSlice';
 import Swal from 'sweetalert2';
 import { Emojis } from '../EmojiSet';
 
-const socket = io("http://localhost:2000");
+const socket = io(process.env.REACT_APP_LINK);
 const MAX_LENGTH_NAME = 50;
 const MAX_LENGTH_BIO = 100;
 

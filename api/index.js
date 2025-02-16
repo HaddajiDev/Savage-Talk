@@ -10,7 +10,7 @@ const app = express();
 
 
 app.use(cors({
-    origin: ["http://localhost:3000"],
+    origin: [process.env.FRONT, process.env.BACK],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true
 }));
@@ -21,7 +21,7 @@ app.use(express.json());
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: [process.env.FRONT, process.env.BACK],
         methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
         credentials: true
     }

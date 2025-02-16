@@ -6,7 +6,7 @@ import { DeleteMsg, GetAllMsgs, SendMasg, addMessage, deleteMessage } from '../r
 import { useNavigate } from 'react-router-dom';
 import { Emojis, emojis } from '../EmojiSet';
 
-const socket = io("http://localhost:2000");
+const socket = io(process.env.REACT_APP_LINK);
 
 function FriendList() {
     const [message, setMessage] = useState('');
