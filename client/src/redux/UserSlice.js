@@ -98,9 +98,9 @@ export const GetUser = createAsyncThunk('user/one', async ({ id }) => {
     }
 });
 
-export const verifyUser = createAsyncThunk("user/verify", async(token) => {
+export const verifyUser = createAsyncThunk("user/verify", async({ token }) => {
 	try {
-		const response = await axios.post(`${link}/user/verify?token=${token}`);
+		const response = await axios.post(`${link}/user/verify`, { token });
 		return response.data;
 	} catch (error) {
 		

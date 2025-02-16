@@ -267,25 +267,36 @@ router.get('/one', async(req, res) => {
     }
 });
 
-router.post('/verify', async(req, res) => {
-    const token = req.query.token;
+router.post('/verify', async (req, res) => {
+    const { token } = req.body;
 
     try {
-        if(!token){
-            return res.status(400).send("error");
+        if (!token) {
+            return res.status(400).send({ error: "Token is required" });
         }
 
         const decoded = jwt.verify(token, process.env.SCTY_KEY);
-        const user = await User.findOne({_id: decoded._id});
-        if(!user){
-            return res.status(400).send("invalid token");
+        const user = await User.findById(decoded._id);
+
+        if (!user) {
+            return res.status(400).send({ error: "Invalid token" });
         }
 
-        res.status(200).send({token : `bearer ${token}`, user : user});
+        const authToken = jwt.sign(
+            { _id: user._id },
+            process.env.SCTY_KEY,
+            { expiresIn: '7d' }
+        );
+
+        res.status(200).send({
+            token: `bearer ${authToken}`,
+            user: user
+        });
+
     } catch (error) {
-        
+        res.status(500).json({ error: "Internal server error" });
     }
-})
+});
 
 
 
