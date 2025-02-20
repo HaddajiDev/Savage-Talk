@@ -152,6 +152,9 @@ export const UserSlice = createSlice({
 	})
 	.addCase(currentUser.rejected, (state) => {
 		state.status = "failed";
+		state.user = null;
+		localStorage.removeItem('token');
+		window.location.reload();
 	})
 
 	.addCase(GetAllGroups.pending, (state) => {
